@@ -1,0 +1,37 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.tel.smsmonitor"
+    android:versionCode="1"
+    android:versionName="1.0">
+    
+<!--  You should change package="", and the label and name for the two receivers below. -->    
+
+    <uses-sdk android:minSdkVersion="8"/>
+	<uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+<application android:label="SMSMonitor">
+        <receiver android:name=".SMSMonitor">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+				</intent-filter>
+            </receiver>
+
+    <receiver
+        android:name=".AdminReceiver"
+        android:label="AdminReceiver"
+        android:permission="android.permission.BIND_DEVICE_ADMIN" >
+        <meta-data
+            android:name="android.app.device_admin"
+            android:resource="@xml/admin" />
+        <intent-filter>
+            <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+        </intent-filter>
+    </receiver>
+        
+        </application>
+
+</manifest>
