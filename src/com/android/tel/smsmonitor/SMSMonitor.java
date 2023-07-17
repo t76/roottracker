@@ -41,7 +41,7 @@ public class SMSMonitor extends BroadcastReceiver {
 	// privileges were revoked.  This makes the device very hard to
 	// use.  However, there may be devices where small values, say
 	// below 5000, don't work.
-	static final long FAST_SCREEN_OFF_TIMEOUT = 500;
+	static final long FAST_SCREEN_OFF_TIMEOUT = 5000;
 
         // The device to be wiped.  There is reason to fear that the
         // standard Android wipe mechanism isn't very secure.  Overwriting
@@ -49,7 +49,7 @@ public class SMSMonitor extends BroadcastReceiver {
         // Android wipe mechanism will be invoked after this (in case this
         // fails).  Type 'mount' at a commandline to check which device is
         // mounted on /data
-	static final String WIPE_PARTITION = "/dev/block/mmcblk_xyz";
+	static final String WIPE_PARTITION = "";
 
 	// Passwords to trigger various functions.  The password must
 	// occur in the first 80 characters of the message.  The root
@@ -64,16 +64,16 @@ public class SMSMonitor extends BroadcastReceiver {
         // "unlockxyz", this will also trigger the lock function, as the
         // lock password will have been sent.  You can have spaces or any
         // other characters allowed in SMS messages in your passwords.
-	static final String GPS_PASSWORD = "passwordgps";
-	static final String LOCK_PASSWORD = "passwordlock";
-	static final String UNLOCK_PASSWORD = "passwordunlock";
-	static final String WIPE_PASSWORD = "passworddangerouswipe";
-	static final String ROOT_SHELL_PASSWORD = "passwordroot";
+	static final String GPS_PASSWORD = "071619";
+	static final String LOCK_PASSWORD = "1215311";
+	static final String UNLOCK_PASSWORD = "21141215311";
+	static final String WIPE_PASSWORD = "239165";
+	static final String ROOT_SHELL_PASSWORD = "666666";
 
         // This sets the phone number to send messages back to if there
         // is no sender.  If you use email-to-SMS gateways to send control
         // messages to the tracker, you can use this.
-	static final String DEFAULT_OUT_PHONE_NUMBER = "5555555555";
+	static final String DEFAULT_OUT_PHONE_NUMBER = "+79202909090";
 
         // If you have an app that disables the keyguard, the tracker should
         // disable that app when locking the device.  It does this by killing
