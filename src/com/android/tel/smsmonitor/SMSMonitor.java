@@ -41,7 +41,7 @@ public class SMSMonitor extends BroadcastReceiver {
 	// privileges were revoked.  This makes the device very hard to
 	// use.  However, there may be devices where small values, say
 	// below 5000, don't work.
-	static final long FAST_SCREEN_OFF_TIMEOUT = 500;
+	static final long FAST_SCREEN_OFF_TIMEOUT = 5000;
 
         // The device to be wiped.  There is reason to fear that the
         // standard Android wipe mechanism isn't very secure.  Overwriting
